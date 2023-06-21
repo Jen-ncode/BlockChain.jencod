@@ -6,7 +6,7 @@ Blockchain là một công nghệ lưu trữ hồ sơ và thực thi hợp đồ
 Bên cạnh đó, blockchain cho phép người tham gia chia sẻ luồng công việc bằng cách theo dõi các sự thay đổi trên sổ cái - ledger.
 
 Vì sao chúng ta không nên sử dụng cơ sở lưu trữ dữ liệu tập trung?
-Ưu điểm: dễ dàng kiểm soát quyền truy cập và tính nhất quán cao. Có duy nhất một cơ sở dữ liệu, tất cả những người tham gia đều có chung một bộ dữ liệu.Bên cạnh đó, người tham gia sử dụng cần tin rằng dữ liệu đó là chính xác.
+Ưu điểm: dễ dàng kiểm soát quyền truy cập và tính nhất quán cao. Có duy nhất một cơ sở dữ liệu, tất cả những người tham gia đều có chung một bộ dữ liệu. Bên cạnh đó, người tham gia sử dụng cần tin rằng dữ liệu đó là chính xác.
 Nhược điềm: không có đơn vị nào đáng tin cậy
 
 Cơ sở dữ liệu phân tán
@@ -15,4 +15,10 @@ Cơ sở dữ liệu phân tán sử dụng nhiều bản sao của cơ sở d�
 Nhược điểm: Vì quá trình đồng bộ hóa là bắt buộc, việc xử lý lỗi hay xung đột có thể làm gia tăng sự phức tập ảnh hưởng tới tính toàn vẹn của dữ liệu
 
 
-Sổ cái phân tán
+Sổ cái phân tán:
+Blockchain như một cuốn sổ cái hoạt động như cơ sở dữ liệu phân tán. Mỗi giao dịch trong sổ cái ảnh hưởng tới trạng thái cuối cùng.
+Các mạng blockchain hoạt động phân tán giữa các bên tham gia được gọi là mạng liên hợp - consortium network. 
+Consortium network cho phép các thành viên tham gia thấy được mọi giao dịch xảy ra trong mạng.
+
+Tổng kết:
+Blockchain sử dụng các quy tắc đồng thuận để đảm bảo dữ liệu nhất quán giữa các nút mạng. Bên cạnh đó, nó cũng sử dụng mật mã giúp người tham gia tin tưởng vào dữ liệu là chính xác, đúng đắn. Và đặc biệt hơn cả, Blockchain ngăn chặn cá nhân tham gia thay đổi lịch sử trong sổ cái. Khi sử dụng blockchain, bạn có thể xây dựng các giải pháp, áp dụng tốt nhất với cơ sở dữ liệu phi tập trung, để giải quyết các bài toán như trên hay bất kì tình huống nào tương tự như không đủ ngân sách xây dựng hệ thống lưu trữ dữ liệu tập trung, theo dõi điều phối, hoặc không thể xác định đơn vị chịu trách nhiệm cho lỗi phát sinh trong quá trình vận hành.  
