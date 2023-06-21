@@ -24,7 +24,10 @@ BlockChain sử dụng cơ chế đồng thuận để xác nhận dữ liệu t
 
 Ví dụ: Nếu bản chuyển quyền sở hữu xe của bạn cho một người bạn, bạn sẽ không thể chuyển quyền sở hữu chiếc xe ấy cho một người khác.
 
+Vấn đề này được gọi là lặp chi – double spending, mà sự đồng thuận có thể giải quyết. 
+Sự đồng thuận đảm bảo thứ tự chính xác của các giao dịch và tính toàn vẹn trên hệ thống blockchain.
+Dễ hình dung trong quá trình đi đến sự đồng thuận, một nhóm giao dịch được xác thực dưới dạng mã khối và mạng lưới phải đồng ý xem khối đó có nên được đưa vào blockchain hay không.
 
-
+Khối là gì?
 
 
