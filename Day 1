@@ -2,6 +2,17 @@ Day 1
 
 Blockchain là gì?
 
-blockchain là một công nghệ lưu trữ hồ sơ và thực thi hợp đồng sử dụng mật mã để làm cho viêc thay đổi lịch sử trở nên vô cùng khó khăn. Bên cạnh đó, blockchain cho phép người tham gia chia sẻ luồng công việc bằng cách theo dõi các sự thay đổi trên sổ cái - ledger.
+Blockchain là một công nghệ lưu trữ hồ sơ và thực thi hợp đồng sử dụng mật mã để làm cho viêc thay đổi lịch sử trở nên vô cùng khó khăn. 
+Bên cạnh đó, blockchain cho phép người tham gia chia sẻ luồng công việc bằng cách theo dõi các sự thay đổi trên sổ cái - ledger.
+
+Vì sao chúng ta không nên sử dụng cơ sở lưu trữ dữ liệu tập trung?
+Ưu điểm: dễ dàng kiểm soát quyền truy cập và tính nhất quán cao. Có duy nhất một cơ sở dữ liệu, tất cả những người tham gia đều có chung một bộ dữ liệu.Bên cạnh đó, người tham gia sử dụng cần tin rằng dữ liệu đó là chính xác.
+Nhược điềm: không có đơn vị nào đáng tin cậy
+
+Cơ sở dữ liệu phân tán
+Cơ sở dữ liệu phân tán sử dụng nhiều bản sao của cơ sở dữ liệu và thay đổi đều được đồng bộ hóa.
+Ưu điểm: mỗi bên thâm gia đều sở hữu một bản sao của cơ sở dữ liệu
+Nhược điểm: Vì quá trình đồng bộ hóa là bắt buộc, việc xử lý lỗi hay xung đột có thể làm gia tăng sự phức tập ảnh hưởng tới tính toàn vẹn của dữ liệu
 
 
+Sổ cái phân tán
