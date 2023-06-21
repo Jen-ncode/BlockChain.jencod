@@ -1,4 +1,30 @@
 Cơ chế hoạt động của BlockChain
 
 Dữ liệu được phân phối như thế nào?
+Sử dụng sổ cái phân tán - công nghệ blockchain, giúp ta bỏ qua việc thiết lập đơn vị trung tâm. Bên cạnh đó, mỗi bên tham gia được đại diện bởi một nút blockchain sẽ có một bản sao của sổ cái để họ có thể tự kiểm tra và tích hợp với hệ thống của họ. Tuy nhiên, không yêu cầu mỗi đơn vị phải có một nút riêng. Các nút trong mạng có thể được chia sẻ giữa các đối tác.
+Lưu ý : Mỗi nút được kết nối với các nút mạng blockchain
+
+Thay đổi trạng thái
+Dữ liệu ở trong một blockchain đại diện cho trạng thái.
+
+Ví dụ 1: Đồng xu nằm trong túi của bạn, trạng thái sở hữu là của bạn. Nếu bạn đưa đồng xu cho bạn bè mình , trạng thái thay đổi thành người bạn đó sở hữu đồng xu.
+Ví dụ 2: Chuyến hàng di chuyển qua chuỗi cung ứng. Trách nhiệm đối với sản phẩm ohair được chuyển giao. Dữ liệu mà chúng ta quan tâm là bên chiệu trách nhiệm, nhiệt độ và sản phẩm có được bảo quản tốt hay không?
+
+Blockchain sử dụng các giao dịch – transaction, để thay đổi trạng thái của dữ liệu từ giá trị này qua giá trị khác. 
+Ví dụ 3: Chúng ta cần biết liệu hàng hóa có được bảo quản ở mức tiêu chuẩn hay không. Trong lô hàng, một cảm biến nhiệt độ sẽ báo nhiệt độ theo định kì. Nhiệt độ được báo cáo được coi là một giao dịch, và được gửi đến một nút giao dịch blockchain.
+
+Quy trình hoạt động:
+Mỗi khi lô hàng qua chuỗi cung ứng, một giao dịch sẽ được gửi mỗi khi trạng thái thay đổi.
+Khi gửi một giao dịch, bạn sẽ gửi nó đến một nút giao dịch BlockChain 
+BlockChain gửi các giao dịch lên toàn mạng. Mỗi nút sẽ nhận được một bản sao của giao dịch
+Mỗi nút sau đó xử lý giao dịch nhưng vẫn yêu cầu bằng cơ chế đồng thuận. Sự đồng thuận tạo ra sự nhất quán và tin cậy cho sổ cái phân tán
+
+Làm thế nào mà bạn có thể tin tưởng tính nhất quán trong dữ liệu sổ cái?
+BlockChain sử dụng cơ chế đồng thuận để xác nhận dữ liệu trên tất cả các nút. Sử dụng sự đồng thuận giúp các nút phi tập trung đến cùng một trạng thái. Khi chuyển giao giá trị hoặc trách nhiệm, hoặc các vấn đề liên quan tới đặt hàng.
+
+Ví dụ: Nếu bản chuyển quyền sở hữu xe của bạn cho một người bạn, bạn sẽ không thể chuyển quyền sở hữu chiếc xe ấy cho một người khác.
+
+
+
+
 
