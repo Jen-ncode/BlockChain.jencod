@@ -1,1 +1,114 @@
+Thành phần cơ bản trong Solidity
+Thành phần cơ bản trong ngôn ngữ Solidity như sau:
+  - Chỉ thị pragma
+  - Biến State
+  - Hàm
+  - Sự kiện
+
+
+
+Chỉ thị pragma
+  -  Pragma là một từ khóa mà bạn sử dụng để yêu cầu trình biên dịch kiểm tra xem phiên bản Solidity hiện tại có phù hợp với phiên bản được yêu cầu hay không. 
+Phù hợp ở đây có nghĩa là mã nguồn của bạn có thể chạy thành công, ngược lại, trình biên dịch sẽ báo lỗi.
+
+  -  Một chỉ thị pragma sẽ có cấu trúc như sau:
+
+------------------------------------------------------------------
+-  1 | pragma solidity ^0.7.0;
+------------------------------------------------------------------
+
+Biến State
+Biến State là một thành phần vô cùng quan trọng trong Solidity. Giá trị biến State sẽ được lưu vĩnh viên trong bộ lưu trữ contract
+
+------------------------------------------------------------------
+-  1 |  pragma solidity >0.7.0 <0.8.0;
+-  2 |  contract Marketplace {
+-  3 |      uint price; // Biến State
+-  4 |
+------------------------------------------------------------------
+
+Hàm
+Cùng với contract, đơn vị thực thi mã nguồn thường được gọi là hàm. 
+Các hàm mô tả hành động để xử lý một tác vụ nào đó, có thể sử dụng lại hàm, do đó, chúng còn gọi là các thư viện. 
+Hàm trong Solidity cũng tương tự như hàm ở các ngôn ngữ lập trình khác.
+
+------------------------------------------------------------------
+-  1 |  pragma solidity >0.7.0 <0.8.0;
+-  2 |  contract Marketplace {
+-  3 |      function buy() public {
+-  4 |              // …
+-  5 |      }
+-  6 |  }
+------------------------------------------------------------------
+Ví dụ : Về một hàm nhận vào một tham số - price kiểu int, và trả về một số int
+
+------------------------------------------------------------------
+-  1 |  pragma solidity >0.7.0      <0.8.0;
+-  2 |  contract Marketplace {
+-  3 |      function buy(uint price) public returns (uint){
+-  4 |              // …
+-  5 |      }
+-  6 |  }
+------------------------------------------------------------------
+
+Hàm bổ trợ
+  -  Hàm bổ tương tự như hàm, tuy nhiên, chúng hoạt động bằng cách kiểm tra một điều kiện trước khi hàm được thực thi. 
+        Ví dụ : một hàm có thể kiểm tra điều kiện: chỉ người dùng được chỉ định là người bán mới có thể liệt kê mặt hàng lên nền tảng.
+
+---------------------------------------------------------------------------
+-  1 |  pragma solidity >0.7.0      <0.8.0;
+-  2 |  
+-  3 |  contract Marketplace {
+-  4 |      address public seller;
+-  5 |      modifier onlySeller() {
+-  6 |                 require(
+-  7 |                           msg.sender == seller,
+-  8 |                           “Only seller can put an item for sale”
+-  9 |                 );
+- 10 |                 _;
+- 11 |      }
+- 12 |      function listItem() public view onlySeller {
+- 13 |               // …
+- 14 |      }
+- 15 | }
+---------------------------------------------------------------------------
+
+Hàm trên bao gồm các thành phần:
+
+  -  Một biến có kiểu dữ liệu là address lưu trữ 20-byte địa chỉ Ethereum của người bán
+  -  Một hàm bổ trợ là onlySeller - từ khóa "modifier" trước tên hàm, định nghĩa chỉ người bán mới có thể đăng sản phẩm
+  -  Kí tự _; chỉ ra phần mà thân hàm được chèn vào
+  -  Một hàm listItem sử dụng điều kiện bổ sung onlySeller
+
+Một số hàm bổ trợ có thể dùng trong hàm định nghĩa:
+
+  -  pure: mô tả chức năng không cho phép sửa đổi hoặc truy cập trạng thái
+  -  view: mô tả các chức năng không cho phép sửa đổi trạng thái
+  -  payable: mô tả chức năng có thể nhận Ether
+
+Sự kiện
+
+Kiểu sự kiện - Event, mô tả các hành động được thực hiện trong contract. Tương tự như các hàm, sự kiện có các tham số cần được chỉ định khi nó được gọi.
+Để gọi một sự kiện, bạn sử dụng từ khóa emit với tên sự kiện và các tham số của nó.
+
+------------------------------------------------------------------
+-  1 |  pragma solidity >0.7.0      <0.8.0;
+-  2 |  
+-  3 |  contract Marketplace {
+-  4 |           event PurchasedItem(address buyer, uint price);
+-  5 |      
+-  6 |           function buy() public{
+-  7 |                     // …
+-  8 |                      emit PurchasedItem(msg.sender, msg.value);
+-  9 |           }
+- 10 |  }
+------------------------------------------------------------------
+
+
+Khi bạn gọi một event, event sẽ được ghi lại dưới dạng một giao dịch trong nhật ký giao dịch, đây là một cấu trúc dữ liệu đặc biệt trong blockchain. 
+Các nhật ký này được liên kết với địa chỉ của contract, được tích hợp vào blockchain và ở đó vĩnh viễn. 
+Nhật ký và dữ liệu event không thể truy cập trong contract, và không thể bị sửa đổi
+
+
+
 
