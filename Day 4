@@ -1,1 +1,40 @@
+Ôn tập:
+
+Câu 1 : Xe tải vận chuyển kem
+Giả sử tủ đông lạnh của một xe tải bị hỏng trong quá trình vận chuyển kem đến cửa hàng, do đó kem trong kho hàng bị chảy. Tuy nhiên tủ đông được sửa và kem được làm lạnh lại trước khi giao hàng. Làm thế nào để cửa hàng kem biết là hàng ngày hôm dó không được bảo quản ở điều kiện quy định.
+
+
+A. Lô hàng chỉ tạm thời không tuân thủ điều kiện bảo quản. Khi tủ đông lạnh được sửa, nhiệt độ trở về mức an toàn, thông số nhiệt độ này sau đó được cập nhật lại vào sổ cái trước khi số kem được giao. Vì vậy, lô hàng được coi là tuân thủ điều kiện bảo quản.
+
+B. Logic trong smart contract thêm vào sổ cái thông tin chuyến hàng không đạt điều kiện bảo quản khi nhiệt độ quá cao. Vì các thông tin trong sổ cái không thể thay đổi, cửa hàng có thể dễ dàng biết được điều kiện bảo quản của lô hàng trong quá trình vận chuyển.
+
+C. Bạn cần kiểm tra lịch sử blockchain để đánh dấu, xác định chuyến hàng có vi phạm điều kiện bảo quản hay không.
+
+>>> B
+
+Câu 2 : Vì sao sổ cái là bất biến?
+
+A. Công nghệ blockchain sử dụng hàm băm để chống giả mạo dữ liệu. Quá trình xác thực sẽ phát hiện ra các block không hợp lệ. Các block này sẽ bị loại bỏ trong quá trình đồng thuận.
+
+B. Sổ cái chỉ được đọc bởi những người tham gia, chỉ những tiến trình được cấp quyền mới có thể ghi dữ liệu. Do đó, sổ cái là bất biến.
+
+C. Tính bất biến phụ thuộc vào cách bạn cài đặt mạng blockchain. Sổ cái có thể được cấu hình thành chỉ đọc hoặc bất biến. Tuy nhiên, blockchain hoàn toàn có thể cấu hình lại, bạn có cài đặt các nút tham gia cho phép quản trị viên tạo các thay đổi trong lịch sử giao dịch. Các thay đổi này sau đó được đồng bộ một cách tự động lên toàn mạng.
+
+>>> A
+
+
+
+Câu 3 : Làm cách nào mà smart contract có thể thực hiện các luồng nghiệp vụ?
+
+A. Smart contract sử dụng logic các luồng nghiệp vụ được định nghĩa trước cho các trường hợp phổ biến.
+
+B. Smart contract là ứng dụng phía người dùng, bạn có thể sử dụng công nghệ blockchain để thực hiện các giao dịch và thay đổi trạng thái sổ cái.
+
+C. Smart contract bao gồm trạng thái và các logic có thể lập trình. Các giao dịch khởi tạo smart contract và thực thi các hàm thay đổi trạng thái.
+
+>>> C
+
+
+
+
 
