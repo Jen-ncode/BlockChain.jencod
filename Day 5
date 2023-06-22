@@ -1,1 +1,148 @@
 
+Tổng quan về Solidity
+
+Solidity là một ngôn ngữ lập trình biên dịch được sử dụng trong xây dựng smart contract – hợp đồng thông minh, ra mắt lần đầu vào năm 2014. 
+Đây là một ngôn ngữ lập trình kiểu tĩnh (statically typed), nghĩa là tất cả các biến cần phải định danh kiểu dữ liệu trước khi sử dụng. 
+Bên cạnh đó, Solidity còn là ngôn ngữ lập trình hướng đối tượng. 
+
+Như vậy, bạn đọc chỉ cần nhớ rằng, ngôn ngữ lập trình Solidity có 3 đặc điểm chính: 
+  -   Biên dịch (compiled), 
+  -   Kiểu tĩnh (statically typed)
+  -   Hướng đối tượng (object oriented). 
+
+Chúng ta có thể sử dụng Solidity vào các mục đích như:
+  -  Xây dựng ứng dụng phi tập trung (DAPPs)
+  -  Xây dựng ứng dụng tài chính (DEFI)
+  -  Buôn bán tài sản điện tử (NFT)
+
+Thành phần của Solidity
+  1. Tạo file có tên demo.sol
+
+  2. Mở đầu file vừa tạo bằng từ khóa pragma chỉ định phiên bản solidity sẽ sử dụng:
+
+  -----------------------------------------------------------------------                                  
+  - 1| pragma solidity ^0.8.7;                                          -
+  -----------------------------------------------------------------------
+
+  3. Sau đó, chúng ta sử dụng từ khóa contract để định nghĩa hợp đồng, từ khóa này tương tự cách sử dụng class ở các ngôn ngữ lập trình khác
+ 
+  -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |
+  - 5 | }                                                           
+  -----------------------------------------------------------------------
+
+4. Bên trong khai báo contract, chúng ta có thể khai báo và sử dụng các biến, còn được gọi là state variables.
+
+   -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |      string public hello = “Hello World!”;
+  - 5 | }                                                           
+  -----------------------------------------------------------------------
+
+5. Ngoài ra, ta có kiểu dữ liệu đặc trưng ở Solidity mà bạn đọc nên chú ý chính là address, kiểu dữ liệu này lưu trữ 20 byte biểu thị địa chỉ Ethereum
+
+  -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |      string public hello = “Hello World!”;
+  - 5 |      address payable public seller;
+  - 6 |      address payable public buyer;   
+  - 7 | }
+  - 8 |
+  -----------------------------------------------------------------------
+
+6. Tiếp theo, tương tự như C hay C++, chúng ta có từ khóa struct để tạo ra kiểu dữ liệu tự định nghĩa
+
+  -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |      string public hello = “Hello World!”;
+  - 5 |      address payable public seller;
+  - 6 |      address payable public buyer;   
+  - 7 | 
+  - 8 |      struct Order {
+  - 9 |        string description;
+  -10 |        bool completed;
+  -11 |      }
+  -12 | 
+  -13 | }
+  -----------------------------------------------------------------------
+
+7. Các hàm trong Solidity sẽ được khai báo thông qua từ khóa function
+
+  -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |      string public hello = “Hello World!”;
+  - 5 |      address payable public seller;
+  - 6 |      address payable public buyer;   
+  - 7 | 
+  - 8 |      struct Order {
+  - 9 |        string description;
+  -10 |        bool completed;
+  -11 |      }
+  -12 | 
+  -13 |     function confirmOrder() public {
+  -14 |          buyer = payable(msg.sender);
+  -15 |     }
+  -16 |
+  -17 | }
+  -18 |
+  -----------------------------------------------------------------------
+
+8. Vì Solidity là ngôn ngữ lập trình hướng đối tượng, do đó, chúng ta cũng có hàm constructor() để thiết lập các tham số khi chương trình thực thi
+
+ -----------------------------------------------------------------------                                  
+  - 1 | pragma solidity ^0.8.7;
+  - 2 | 
+  - 3 | contract MyContract {
+  - 4 |      string public hello = “Hello World!”;
+  - 5 |      address payable public seller;
+  - 6 |      address payable public buyer;   
+  - 7 | 
+  - 8 |      struct Order {
+  - 9 |        string description;
+  -10 |        bool completed;
+  -11 |      }
+  -12 | 
+  -13 |     function confirmOrder() public {
+  -14 |          buyer = payable(msg.sender);
+  -15 |     }
+  -16 |
+  -17 |     constructor(string memory _text) {
+  -18 |         hello = _text;
+  -19 |     }
+  -20 |
+  -21 | }
+  -----------------------------------------------------------------------
+
+9. Sau khi chúng ta hoàn thành việc lập trình, ta sẽ thực hiện biên dịch để chạy chương trình:
+
+=========================================================================
+>>> Compiling your contracts...
+=========================================================================
+
+10. Ngay khi mã nguồn Solidity được biên dịch thành công – bạn đọc có thể tham khảo IDE trực tuyến để biên dịch tại [remix] - https://remix.ethereum.org/.
+Sau đó, chúng ta có thể sử dụng web3.js để tương tác với smart contract và xây dựng các ứng dụng phi tập trung bằng ngôn ngữ lập trình khác như Javascript.
+
+
+
+Vậy Ethereum là gì?
+  -  Ethereum là một trong những nền tảng blockchain phổ biến nhất, nằm ngay sau Bitcoin. Và nền tảng này có đồng tiền điện tử của riêng mình là Ether (ETH) – bạn đọc có thể mua và bán.
+  -  Ethereum đặc biệt bởi nó được coi là blockchain của giới lập trình. Bằng cách sử dụng Ethereum, bạn có thể định nghĩa các hợp đồng, hay được biết đến là hợp đồng thông minh. 
+  -  Các hợp đồng thông minh được sử dụng để mô tả cách người tham gia blockchain giao dịch các tài sản số. Solidity là ngôn ngữ lập trình chính được sử dụng để phát triển nền tảng Ethereum, và nó được xây dựng cũng như bảo trì bởi các lập trình viên Ethereum.
+
+Máy ảo Ethereum
+  -  Đây là một môi trường cô lập, nó không truy cập bất cứ thứ gì khác trên mạng ngoài các hợp đồng mà nó thực thi. 
+Hiện tại thì bạn đọc chưa cần quan tâm nhiều về EVM, mà chỉ cần nắm được là các hợp đồng thông minh viết bằng Solidity sẽ được triển khai và chạy trên một môi trường ảo.
+
+
+
