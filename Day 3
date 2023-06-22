@@ -1,1 +1,34 @@
+Phân loại Blockchain
+Blockchain có thể được chia làm 2 loại: công khai và riêng tư. 
+Sự khác biệt này quyết định đối tượng tham gia vào mạng.
+
+Công khai
+Mạng blockchain công khai được xây dựng trong trường hợp bạn đọc muốn tạo một mạng lưới mà không cần sự tin tưởng giữa những người tham gia.
+
+Một blockchain công khai được phân phối phi tập trung và klhoong có thẩm quyền trong mảng. 
+Tất cả các giao dịch trong mạng blockchain công khai đều có thể nhìn thấy bởi bất kỳ nú nào trên mạng.
+
+Mạng blockchain đầu tiên được tạo ra cho Bitcoin, đây là mạng công khai. Mọi giao dịch đều có thể được xem bởi bất kỳ ai. 
+
+Các thuật toán đồng thuận trong mạng blockchain công khai sử dụng tiền điện tử như một phần thưởng để xác thực các block. 
+Các blockchain công khai cũng có thể tính phí tiền điện tử để xác thực các giao dịch. 
+Quyền riêng tư của mạng blockchain công khai bị giới hạn. 
+
+Riêng tư
+Mạng blockchain riêng tư chỉ có thể truy cập được đối với những người tham gia được mời vào mạng. 
+Mạng riêng tư này là mạng bán tin cậy. 
+
+Trong một mạng riêng, có một thỏa thuận được thiết lập giữa tất cả những người tham gia về cách họ sẽ tận dụng blockchain.
+
+Chuỗi khối liên hợp – consortinum blockchain, là một blockchain riêng tư nhưng quyền hạn được phân phối và hoạt động vì lợi ích của mạng.
+
+
+
+Các giao thức Blockchain
+Giao thức blockchain và nổi tiếng nhất là Bitcoin. Mạng blockchain Bitcoin được tạo ra dành cho tiền điện tử Bitcoin. Chức năng chính của mạng blockchain Bitcoin là lưu trữ giá trị Bitcoin. Giá trị có thể được chuyển từ người này sang người khác mà không cần bên tin cậy làm trung gian.
+Giao thức Ethereum là một giao thức sử dụng chung. Ethereum mở rộng những gì Bitcoin đã tạo ra để cung cấp một giao thức cho phép viết các chương trình nhỏ, cũng như chuyển giao giá trị đơn giản. Ưu điểm của giao thức này là khả năng thêm logic và mã thực thi thay vì chuyển giá trị cố định.
+
+Nếu sử dụng blockchain, hãy xem xét sử dụng một giao thức sử dụng chung như Ethereum và Hyperledger Fabric. Chúng là các blockchain có thể lập trình, có thể được sử dụng cho một số tình huống. Các giao thức sử dụng chung sử dụng các hợp đồng thông minh để mã hóa trạng thái và logic nghiệp vụ.
+
+
 
