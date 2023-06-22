@@ -12,6 +12,8 @@ C. Bạn cần kiểm tra lịch sử blockchain để đánh dấu, xác địn
 
 >>> B
 
+
+
 Câu 2 : Vì sao sổ cái là bất biến?
 
 A. Công nghệ blockchain sử dụng hàm băm để chống giả mạo dữ liệu. Quá trình xác thực sẽ phát hiện ra các block không hợp lệ. Các block này sẽ bị loại bỏ trong quá trình đồng thuận.
