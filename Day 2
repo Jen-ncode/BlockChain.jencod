@@ -30,4 +30,53 @@ Dễ hình dung trong quá trình đi đến sự đồng thuận, một nhóm g
 
 Khối là gì?
 
+Một khối, hay một block, là một cụm dữ liệu trong chuỗi khối – blockchain, lưu trữ thông tin giao dịch. 
+Số lượng giao dịch trong một khối thường dựa trên thời gian. 
+Ví dụ, hình minh họa cho thấy một khối chứa các giao dịch đã xảy ra trong 10p.
+
+Thông qua sự đồng thuận, các khối đã xác thực được thêm vào blockchain tại các nút. 
+Bởi vì tất cả các nút có các khối giống nhau trong chuỗi, sổ cái nhất quán trên toàn mạng. 
+Kết quả là tất cả các nút đều chứa cùng một dữ liệu đã được xác định theo thứ tự đã thỏa thuận.
+
+
+Làm thế nào để bạn tin tưởng sổ cái không bị thay đổi?
+
+Blockchain sử dụng một hàm băm mật mã để tạo liên kết giữa các khối. 
+Bằng cách liên kết các khối, thứ tự giao dịch có thể được thỏa thuận thông qua thuật toán đồng thuận. 
+Hàm băm mật mã là một thuật toán án xạ dữ liệu có kích thước tùy ý sang biểu diễn bit có kích thước cố định. 
+Bạn có thể liên tưởng tới chữ kí số. Bitcoin sử dụng thuật toán băm SHA-256. 
+Nếu bạn đã sử dụng hàm băm SHA-256 trên tài liệu 100 trang, đầu ra của hàm là giá trị băm 256 bit. 
+Trong trường hợp bạn thay đổi dù chỉ một ký tự trong tài liệu và tạo lại hàm băm, thì kết quả đầu ra thu được là một giá trị 256-bit hoàn toàn khác. 
+Ví dụ : Tưởng tượng nếu chúng ta sử dụng một khối làm đầu vào cho hàm băm. Đầu ra sẽ là một giá trị băm duy nhất cho dữ liệu trong khối.
+  -Blockchain sử dụng các hàm băm để phát hiện xem có bất kì thay đổi nào được thực hiện đối với các khối hay không. 
+Bằng cách bao gồm giá trị băm của khối trước vào quá trình tạo hàm băm của khối tiếp theo, các khối được liên kết với nhau thông qua các hàm băm.
+  -Blockchain cung cấp sự tin tưởng bằng cách sử dụng hàm băm để chứng minh lịch sử dữ liệu không thay đổi. 
+Và bằng cách bao gồm hàm băm của khối trước vào việc tạo khối mới, một chuỗi giao dịch bất biến được tạo theo thứ tự.
+  -Nếu bất kì khối nào được sửa đổi trong chuỗi, hàm băm của các khối sau đó sẽ khác. 
+Kết quả là quá trình xác thực phát hiện ra sự khác biệt.
+
+Logic tin cậy
+
+Sử dụng logic để chuyển trách nhiệm của đơn vị phụ trách sản phẩm từ người này sang người khác. Ngoài ra, ta cũng cần sử dụng dữ liệu từ cảm biến nhiệt độ để xác định được trạng thái bảo quản sản phẩm.
+
+Ứng dụng phi tập trung (DApp) là một ứng dụng trên hệ thống máy tính phân tán. Chúng ta sẽ tập trung vào việc sử dụng giao thức Ethereum (Ethereum DApps được gọi là các hợp đồng thông minh – smart contract). 
+Hợp đồng thông minh chứa logic được thực hiện như một phần của giao dịch. 
+Trên nền tảng Ethereum, bạn đọc sẽ lập trình logic bằng ngôn ngữ Solidity.
+
+Các hợp đồng thông minh được triển khai vào Blockchain và được tham chiếu bởi một địa chỉ. 
+Để sử dụng hợp đồng thông minh, bạn tạo một thực thể - instance (Instance hợp đồng thông mình chứa dữ liệu trạng thái và logic chương trình)
+Trong kịch bản của chúng ta, một instance hợp đồng thông minh chứa dữ liệu như: đơn vị chịu trách nhiệm cho khâu cụ thể, vị trí và tình huống nhiệt độ bảo quản bị sai lệc
+
+Cũng giống như dữ liệu trong blockchain, hợp đồng thông minh không thể thay đổi. Một khi đã được triển khai thì không thể thay đổi logic. 
+Do đó, bạn có thể tin tưởng rằng logic hợp đồng thông minh luôn thực thi giống nhau trên mọi nút. 
+Bất kỳ thay đổi nào cũng yêu cầu một hợp đồng thông minh mới được triển khai tại một địa chỉ mới.
+
+
+
+
+
+
+
+
+
 
