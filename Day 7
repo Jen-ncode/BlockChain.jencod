@@ -6,6 +6,89 @@ Số nguyên: Kiểu dữ liệu đầu tiên là số nguyên, Integer. Kiểu 
     unsigned: chỉ gồm các số nguyên dương: int
 
 Ví dụ:
+int32 price = 25; // signed 32 bit integer
+uint256 balance = 1000; // unsigned 256 bit integer
+
+balance - price; // 975
+2 * price; // 50
+price % 2; // 1
+
+Boolean: Khai báo từ khóa boll.( True or False)
+
+Ví dụ:
+
+bool forSale; //trả về là true nếu vật phẩm được rao bán
+bool purchased; //trả về là true nếu vật phẩm đã được thanh toán
+Booleans thường được sử dụng trong so sánh các điều kiện
+
+***************************************************************************
+*        if(balance > 0 & balance > price) {
+*             return true;
+*        }
+*
+*        if(price > balance) {
+*             return false;
+*        }
+***************************************************************************
+
+Và cũng có thể sử dụng như tham số hàm và định nghĩa kiểu dữ liệu trả về
+
+***************************************************************
+*        function buy(int price) returns (bool success) {
+*            // ...
+*        }
+**************************************************************
+
+Chuỗi kí tự: hầu hết các contract, và được bọc bởi nháy đơn hoặc nháy kép.
+Các kí tự trong chuỗi kí tự:
+                                \<newline> 
+                                \n 
+                                \r
+                                \t
+
+****************            ************************                    **************
+
+Address là kiểu dữ liệu sử dụng 20-byte thể hiện địa chỉ tài khoản Ethereum. 
+Có thể  khai báo là address hoặc address payable
+
+Điểm khác biệt chính là address payable là địa chỉ mà bạn có thể gửi Ether tới,
+và nó bao gồm hai phương thức transfer và send
+
+************************************************************************************
+*        address payable public seller; // tài khoản người bán
+*        address payable public buyer; // tài khoản người mua
+*
+*        function transfer(address buyer, uint price) {
+*              buyer.transfer(price); // thực hiện chuyển tiền theo giá vật phẩm
+*        }
+*
+************************************************************************************
+
+
+
+Enums: để tạo kiểu dữ liệu tự định nghĩa. Enums có thể được sử dụng để đưa ra nhiều lựa chọn, một trong số đó là bắt buộc.
+
+Ví dụ, một enums có thể được trình bày các trạng thái khác nhau cho một mặt hàng. 
+Bạn có thể coi enums là đại diện cho các câu trả lời trắc nghiệm, trong đó, tất cả các giá trị xác định trước và bạn phải chọn một. 
+Enums có thể được khai báo trong các định nghĩa hợp đồng hoặc thư viện.
+
+************************************************************************************
+*        enum Status { 
+*              Pending,
+*              Shipped,
+*              Delivered    
+*        }
+*
+*        Status public status;
+*        contructor() public {
+*                status = Status.Pending;
+*        }
+*
+************************************************************************************
+
+
+
+
 
 
 
