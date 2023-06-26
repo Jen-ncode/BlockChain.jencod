@@ -1,1 +1,105 @@
 
+                                         THAM CHIẾU
+
+                                        Data location
+Khi sd tham chiếu, bạn cug cấp rõ vị trí lưu trữ dl cho kiểu dl đc định nghĩa
+Các tùy chọn chỉ định vị trí dữ liệu
+
+    Memory (bộ nhớ): Vị trí lưu là các đối số hàm, nhưng bị giới hạn cới hàm gọi bên ngoài
+    Storage (lưu trữ): Vị trí lưu trữ các biến trạng thái, nhưng tồn tại giới hạn trong thời gian contract
+    Calldata (gọi dữ liệu): Vị trí lưu trữ các đối số của hàm, bắt buộc đối với các hàm bên ngoài, nhưng cũng có thể sd cho các biến khác và bị giới hạn với hàm gọi bên ngoài.
+
+Ví dụ: Các kiểu tham chiếu luôn tạo ra một bản sao độc lập của dữ liệu.
+*******************************************************************************************
+*  contract c {
+*    
+*    unit[] x;
+*    // data location của các giá trị là memory
+*    function buy(uint[] menory values) public {
+*          x = value; // sao chép mảng vào bộ nhớ
+*          unit[] storage y = x; // data location của y là storage
+*          g(x); // gọi hàm g để xử lý tham chiếu đến x
+*          h(x); // gọi hàm h và tạo một bản sao tạm thời trong memory
+*    }
+*
+*    function g(unit[] storage) interal pure {}
+*    function h(unit[] memory public pure {}
+*    }
+*******************************************************************************************
+
+                                        Array
+
+Mảng là một cách để lưu trữ dữ liệu tương tự trong một cấu trúc dữ liệu tập hợp. 
+Mảng có thể có kích thước cố định hoặc động. 
+Các chỉ số của mảng bắt đầu từ 0.
+
+Ví dụ sau cho thấy việc tạo mảng:
+
+********************************************************************************************
+*  uint[] itemIds; // Định nghĩa mảng itemIds có kích thước động
+*  uint[3] prices = [1, 2, 3]; // Khởi tạo mảng có kích thước cố định gồm 3 phần thử 1,2 và 3
+*  uint[] prices = [1, 2, 3]; // Tương tự như trên
+********************************************************************************************
+
+Thành phần trong Array
+    length: lấy độ dài của một mảng
+    push(): thêm một phần tử vào cuối mảng
+    pop: xóa một phần tử cuối mảng
+
+Ví dụ
+*********************************************************************************
+*  // Tạo mảng kiểu byte kích thước động
+*  bytes32[] itemNames;
+*  itemNames.push(bytes32("computer")); // thêm chuỗi "computer" vào mảng
+*  itemNames.length; // 1
+*********************************************************************************
+
+
+                                      Struct
+
+Struct là các kiểu tùy chỉnh mà người dùng có thể xác định để đại diện cho các đối tượng trong thế giới thực.
+Struct dử dụng như một SCHEMA hoặc để biểu diễn các bản ghi
+
+************************************
+*  struct Items_Schema {
+*  unit256_id:
+*  unit256_price:
+*  string_name;
+*  string_description;
+*  }
+************************************
+
+**************                **************                   **************
+
+                                      Mapping
+
+Mapping là các cập giá trị được đóng gói hoặc đóng gói cùng nhau. 
+Sử dụng mapping để lập mô hình (các đối tượng trong thế giới thực giúp quá trình thực hiện tra cứu dữ liệu nhanh hơn)
+
+Ví dụ mã sau đây sử dụng cấu trúc Items_Schema và lưu danh sách các mục được biểu thị bởi Items_Schema dưới dạng từ điển. 
+Bằng cách này, ánh xạ bắt chước một cơ sở dữ liệu.
+
+**************************************************************************************
+*      contract Items {
+*      unit256 item_id = 0;
+*      
+*      mapping(unit256 => Items_Schema) public items;
+*    
+*      struct Items_Schema {
+*      unit256 _id:
+*      unit256 _price:
+*      string _name;
+*      }
+*      
+*      function list(unit 256 memory_price, string memory_name) public {
+*      items_id +=1;
+*      item[vahicle_id] = Items_Schema(item_id, _price, _name);
+*      }
+*  }
+*************************************************************************************
+
+
+
+
+
+
