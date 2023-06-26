@@ -1,1 +1,11 @@
 
+Kiểu dữ liệu trong Solidity
+
+Số nguyên: Kiểu dữ liệu đầu tiên là số nguyên, Integer. Kiểu dữ liệu này có thể lưu trữ từ 8 đến 256 bit giá trị:
+    signed: bao gồm số âm và số dương: int
+    unsigned: chỉ gồm các số nguyên dương: int
+
+Ví dụ:
+
+
+
