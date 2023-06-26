@@ -1,1 +1,50 @@
 
+                                              Smart Contract
+Sử dụng Solidity để tạo một smart contract đơn giản sử dụng cho sàn giao dịch trực tuyến. 
+Contract mà chúng ta sẽ viết cho phép người dùng liệt kê các mặt hàng để bán và mua các mặt hàng sẵn có. 
+Như vậy, bạn đọc dễ dàng nhận thấy có hai nhóm cần tương tác: người bán và người mua.
+
+
+*********************************************************************************************
+pragma solidity >0.7.0 <0.8.0;
+
+contract Marketplace {
+    address public seller;
+    address public buyer;
+    mapping (address => uint) public balances;
+
+    event ListItem(address seller, uint price);
+    event PurchasedItem(address seller, address buyer, uint price);
+
+    enum StateType {
+          ItemAvailable,
+          ItemPurchased
+    }
+
+    StateType public State;
+
+    constructor() public {
+        seller = msg.sender;
+        State = StateType.ItemAvailable;
+    }
+
+    function buy(address seller, address buyer, uint price) public payable {
+        require(price <= balances[buyer], "Insufficient balance");
+        State = StateType.ItemPurchased;
+        balances[buyer] -= price;
+        balances[seller] += price;
+
+        emit PurchasedItem(seller, buyer, msg.value);
+    }
+}    
+*******************************************************************************************
+
+Các thành phần chính trong smart contract
+    3 biến state: buyer, seller và balances tương ứng với ng mua, ng bán và số dư tk
+    2 event: ListItem và PurchasedItem tương ứng liệt kê mặt gàng và mặt hàng được thanh toán
+    Enum với 2 giá trị: ItemAvaiable và ItemPurchased
+Hàm tạo - constructor chỉ định người dùng bán là msg.sender và đặt trạng thái ban đầu thành ItemAvailable. Hàm tạo này được gọi khi contract được thiết lập.
+
+Hàm buy nhận vào 3 tham số: seller, buyer và price. 
+Hàm này yêu cầu người mua phải có đủ tiền để thanh toán sản phẩm, 
+nếu thỏa mãn điều kiện, hàm thực hiện chuyển tiền từ người mua sang người bán và cuối cùng thực hiện emit sự kiện.
